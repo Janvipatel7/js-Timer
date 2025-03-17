@@ -1,0 +1,74 @@
+
+.bg-design {
+    font-family: 'Poppins', sans-serif;
+    background: #212136;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.timer-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+.timer-circle {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    margin: 20px auto;
+    flex-direction: column;
+}
+.inputs {
+    display: flex;
+    align-items: center;
+}
+input {
+    width: 40px;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #55555570;
+    color: white;
+    outline: none;
+    transition: all 0.6s linear;
+    border: 1px solid #55efc301;
+}
+input:focus{
+    border: 1px solid #55efc3aa;
+}
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.buttons {
+    margin-top: 20px;
+}
+button {
+    background: #00b8933c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+button:hover {
+    background: #55efc3aa;
+}
