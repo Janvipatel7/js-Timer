@@ -1,8 +1,10 @@
 let timer;
-let totalSeconds = 0;
-let time = document.getElementById("timer")
+let totalSeconds;
+let time = document.getElementById("timer");
+let runningState = false;
 
 document.getElementById("start").addEventListener("click" , function (){
+    if(runningState) return
     startTimer();
 })
 
@@ -22,6 +24,7 @@ function startTimer(){
     }
 
     timer = setInterval(() => {
+        runningState = true;
         displayTime();
         totalSeconds--;
     } , 1000);
