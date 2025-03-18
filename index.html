@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylish Timer</title>
+    <title>Modern Countdown Timer</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <section class="bg-design">
-        <div class="timer-container">
-            <h1>Countdown Timer</h1>
-            <div class="timer-circle">
+        <div class="box">
+            <div class="timer-container">
+                <h1>Countdown Timer</h1>
                 <div class="inputs">
                     <input type="number" id="hours" placeholder="HH" min="0">
                     <span>:</span>
@@ -18,15 +18,18 @@
                     <span>:</span>
                     <input type="number" id="seconds" placeholder="SS" min="0" max="59">
                 </div>
-                <div class="timer" id="timer">00:00:00</div>
-            </div>
-            <div class="buttons">
-                <button id="start">Start</button>
-                <button id="pause">Pause</button>
-                <button id="reset">Reset</button>
+                <div class="timer-circle">
+                    <div class="timer" id="timer">00:00:00</div>
+                </div>
+                <div class="buttons">
+                    <button id="start">⏸  Start</button>
+                    <button id="pause">▶  Pause</button>
+                    <button id="reset">🔃 Reset</button>
+                </div>
             </div>
         </div>
     </section>
+
     <script src="./assets/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
