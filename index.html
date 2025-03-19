@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Countdown Timer</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
 </head>
 <body>
     <section class="bg-design">
-        <div class="box">
+        <div class="box-t">
             <div class="timer-container">
-                <h1>Countdown Timer</h1>
+                <h1>Countdown Timer 🕚</h1>
                 <div class="inputs">
                     <input type="number" id="hours" placeholder="HH" min="0">
                     <span>:</span>
@@ -21,7 +22,7 @@
                 <div class="timer-circle">
                     <div class="timer" id="timer">00:00:00</div>
                 </div>
-                <div class="buttons">
+                <div class="button">
                     <button id="start">⏸  Start</button>
                     <button id="pause">▶  Pause</button>
                     <button id="reset">🔃 Reset</button>
@@ -30,7 +31,26 @@
         </div>
     </section>
 
+    <div class="modal fade" id="timeUpModal" tabindex="-1" aria-labelledby="timeUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-black" id="timeUpModalLabel">Time's Up!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-black">
+                    "Your time is precious. Spend it wisely, grow daily, and cherish every moment."
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
