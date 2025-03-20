@@ -29,7 +29,7 @@ function startTimer() {
     timer = setInterval(() => {
         if (totalSeconds == -1) {
             clearInterval(timer);
-            showModal();  // 🎉 Show modal when time is up!
+            showModal(); 
             runningState = false;
         } else {
             updateTime();
@@ -74,16 +74,14 @@ function updateTime() {
         `${hrs.toString().padStart(2, '0')}:${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
 }
 
-// ✅ Function to show the Bootstrap modal when time is up
 function showModal() {
     const myModal = new bootstrap.Modal(document.getElementById('timeUpModal'));
     myModal.show();
-
-    // 🎉 Start confetti after 300ms for a smooth effect
+    let audio = document.getElementById("sound");
     setTimeout(() => {
-        const end = Date.now() + 5000; // Confetti runs for 5 seconds
+        const end = Date.now() + 5000; 
 
-        const colors = ["#bb0000", "#ffffff"]; // Red & White Confetti
+        const colors = ["#bb0000", "#ffffff"]; 
 
         function launchConfetti() {
             confetti({
@@ -109,4 +107,6 @@ function showModal() {
 
         launchConfetti();
     }, 300);
+    audio.currentTime = 0;
+    audio.play();
 }
