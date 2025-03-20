@@ -89,13 +89,14 @@ input:focus {
     display: flex;
     justify-content: center;
     gap: 10px;
+    
 }
 
 button {
     background: rgba(0, 184, 147, 0.3);
     border: none;
     color: white;
-    padding: 5px 25px;
+    padding: 12px 25px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 8px;

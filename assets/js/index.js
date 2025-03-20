@@ -3,14 +3,16 @@ let totalSeconds;
 let runningState = false;
 let paused = false;
 let time = document.getElementById("timer");
+let newFlag = false;
 
 document.getElementById("start").addEventListener("click", function () {
-    if (runningState) return; 
+    if (runningState) return;
     startTimer();
+    newFlag = true;
 });
 
 function startTimer() {
-    if (!paused) {  
+    if (!paused) {
         let h = parseInt(document.getElementById("hours").value) || 0;
         let m = parseInt(document.getElementById("minutes").value) || 0;
         let s = parseInt(document.getElementById("seconds").value) || 0;
@@ -29,7 +31,7 @@ function startTimer() {
     timer = setInterval(() => {
         if (totalSeconds == -1) {
             clearInterval(timer);
-            showModal(); 
+            showModal();
             runningState = false;
         } else {
             updateTime();
@@ -44,18 +46,21 @@ function startTimer() {
 document.getElementById("pause").addEventListener("click", () => {
     const pauseButton = document.getElementById("pause");
 
-    if (runningState) {
-        clearInterval(timer);
-        runningState = false;
-        paused = true; 
-        pauseButton.innerHTML = 'Play';
-    } else {
-        startTimer(); 
-        pauseButton.innerHTML = 'Pause';
+    if (newFlag) {
+        if (runningState) {
+            clearInterval(timer);
+            runningState = false;
+            paused = true;
+            pauseButton.innerHTML = 'Play';
+        } else {
+            startTimer();
+            pauseButton.innerHTML = 'Pause';
+        }
     }
 });
 
 document.getElementById("reset").addEventListener("click", function () {
+    const pauseButton = document.getElementById("pause");
     clearInterval(timer);
     runningState = false;
     paused = false;
@@ -63,6 +68,8 @@ document.getElementById("reset").addEventListener("click", function () {
     document.getElementById("hours").value = "";
     document.getElementById("minutes").value = "";
     document.getElementById("seconds").value = "";
+    pauseButton.innerHTML = "Pause"
+    newFlag = false;
 });
 
 function updateTime() {
@@ -79,9 +86,9 @@ function showModal() {
     myModal.show();
     let audio = document.getElementById("sound");
     setTimeout(() => {
-        const end = Date.now() + 5000; 
+        const end = Date.now() + 5000;
 
-        const colors = ["#bb0000", "#ffffff"]; 
+        const colors = ["#bb0000", "#ffffff"];
 
         function launchConfetti() {
             confetti({
@@ -109,4 +116,11 @@ function showModal() {
     }, 300);
     audio.currentTime = 0;
     audio.play();
+    newFlag = false;
+    const pauseButton = document.getElementById("pause");
+    pauseButton.innerHTML = "Pause";
+    document.getElementById("timer").innerHTML = "00:00:00";
+    document.getElementById("hours").value = "";
+    document.getElementById("minutes").value = "";
+    document.getElementById("seconds").value = "";
 }
