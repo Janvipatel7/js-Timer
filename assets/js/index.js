@@ -9,19 +9,31 @@ let newQuote = document.getElementById("newQuote")
 let newAuthor = document.getElementById("newAuthor")
 
 let quotes = [
-    { quote: "All that glitters is not gold.", author: "- William Shakespeare" },
-    { quote: "Life is like riding a bicycle. To keep your balance, you must keep moving.", author: "- Albert Einstein" },
-    { quote: "No one can make you feel inferior without your consent.", author: "- Eleanor Roosevelt" },
-    { quote: "Whatever you are, be a good one.", author: "- Abraham Lincoln" },
-    { quote: "Be yourself; everyone else is already taken.", author: "- Oscar Wilde" },
-    { quote: "Our greatest glory is not in never falling, but in rising every time we fall.", author: "- Nelson Mandela" },
-    { quote: "You don’t have to be great to start, but you have to start to be great.", author: "- Zig Ziglar" },
-    { quote: "It is during our darkest moments that we must focus to see the light.", author: "- Aristotle" },
-    { quote: "You are never too old to set another goal or to dream a new dream.", author: "- C.S. Lewis" },
-    { quote: "To live is the rarest thing in the world. Most people just exist.", author: "- Oscar Wilde" }
+    { quote: "I don't believe in taking the right decisions, I take decisions and then make them right",
+         author: "- Ratan Tata"},
+    { quote: "To lose patience is to lose the battle.",
+         author: "- Mahatma Gandhi" },
+    { quote: "The two most powerful warriors are patience and time.",
+         author: "- Leo Tolstoy" },
+    { quote: "Whatever you are, be a good one.",
+         author: "- Abraham Lincoln" },
+    { quote: "All that we are is the result of what we have thought. The mind is everything. What we think we become.",
+         author: "- Gautama Buddha." },
+    { quote: "Even if we lose the wealth of thousands, and our life is sacrificed, we…should keep smiling and be cheerful keeping our faith in God and Truth.",
+         author: "- Sardar Patel" },
+    { quote: "You have to  dream before your DREAMS CAN COME TRUE",
+         author: "- A.P.J. ABDUL KALAM" },
+    { quote: "I don't carry the burden of the past or the madness of the future. I live in the present.",
+         author: "- Narendra Modi" },
+    { quote: "You are never too old to set another goal or to dream a new dream.",
+         author: "- C.S. Lewis" },
+    { quote: "To live is the rarest thing in the world. Most people just exist.",
+         author: "- Oscar Wilde" }
 ]
 
 document.getElementById("start").addEventListener("click", function () {
+    const pauseButton = document.getElementById("pause");
+    pauseButton.innerHTML = "pause";
     if (runningState) return;
     startTimer();
     newFlag = true;
@@ -41,7 +53,7 @@ function startTimer() {
                 icon: "error",
             });
             return;
-        }
+        
     }
 
     timer = setInterval(() => {
@@ -109,7 +121,10 @@ function updateTime() {
 }
 
 function showModal() {
+    let randomValue = parseInt(Math.random() * 10)
     const myModal = new bootstrap.Modal(document.getElementById('timeUpModal'));
+    newQuote.innerHTML = `${quotes[randomValue].quote}`
+    newAuthor.innerHTML = `${quotes[randomValue].author}`
     myModal.show();
     let audio = document.getElementById("sound");
     setTimeout(() => {
@@ -150,4 +165,5 @@ function showModal() {
     document.getElementById("hours").value = "";
     document.getElementById("minutes").value = "";
     document.getElementById("seconds").value = "";
+}
 }
