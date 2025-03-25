@@ -10,30 +10,30 @@ let newAuthor = document.getElementById("newAuthor")
 
 let quotes = [
     { quote: "I don't believe in taking the right decisions, I take decisions and then make them right",
-         author: "- Ratan Tata"},
-    { quote: "To lose patience is to lose the battle.",
-         author: "- Mahatma Gandhi" },
-    { quote: "The two most powerful warriors are patience and time.",
-         author: "- Leo Tolstoy" },
-    { quote: "Whatever you are, be a good one.",
-         author: "- Abraham Lincoln" },
-    { quote: "All that we are is the result of what we have thought. The mind is everything. What we think we become.",
-         author: "- Gautama Buddha." },
-    { quote: "Even if we lose the wealth of thousands, and our life is sacrificed, we…should keep smiling and be cheerful keeping our faith in God and Truth.",
-         author: "- Sardar Patel" },
-    { quote: "You have to  dream before your DREAMS CAN COME TRUE",
-         author: "- A.P.J. ABDUL KALAM" },
-    { quote: "I don't carry the burden of the past or the madness of the future. I live in the present.",
-         author: "- Narendra Modi" },
-    { quote: "You are never too old to set another goal or to dream a new dream.",
-         author: "- C.S. Lewis" },
-    { quote: "To live is the rarest thing in the world. Most people just exist.",
-         author: "- Oscar Wilde" }
+        author: "- Ratan Tata"},
+   { quote: "To lose patience is to lose the battle.",
+        author: "- Mahatma Gandhi" },
+   { quote: "The two most powerful warriors are patience and time.",
+        author: "- Leo Tolstoy" },
+   { quote: "Whatever you are, be a good one.",
+        author: "- Abraham Lincoln" },
+   { quote: "All that we are is the result of what we have thought. The mind is everything. What we think we become.",
+        author: "- Gautama Buddha." },
+   { quote: "Even if we lose the wealth of thousands, and our life is sacrificed, we…should keep smiling and be cheerful keeping our faith in God and Truth.",
+        author: "- Sardar Patel" },
+   { quote: "You have to  dream before your DREAMS CAN COME TRUE",
+        author: "- A.P.J. ABDUL KALAM" },
+   { quote: "I don't carry the burden of the past or the madness of the future. I live in the present.",
+        author: "- Narendra Modi" },
+   { quote: "You are never too old to set another goal or to dream a new dream.",
+        author: "- C.S. Lewis" },
+   { quote: "To live is the rarest thing in the world. Most people just exist.",
+        author: "- Oscar Wilde" }
 ]
 
 document.getElementById("start").addEventListener("click", function () {
     const pauseButton = document.getElementById("pause");
-    pauseButton.innerHTML = "pause";
+    pauseButton.innerHTML = "pause"
     if (runningState) return;
     startTimer();
     newFlag = true;
@@ -53,7 +53,7 @@ function startTimer() {
                 icon: "error",
             });
             return;
-        
+        }
     }
 
     timer = setInterval(() => {
@@ -165,5 +165,4 @@ function showModal() {
     document.getElementById("hours").value = "";
     document.getElementById("minutes").value = "";
     document.getElementById("seconds").value = "";
-}
 }
